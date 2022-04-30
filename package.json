@@ -13,6 +13,8 @@
   "author": "José Manuel Madriaza Caravia <jm.madriaza@uc.cl>",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "sequelize": "^6.19.0",
+    "sequelize-cli": "^6.4.1"
   }
 }
