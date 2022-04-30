@@ -11,5 +11,8 @@
     "url": "git+https://github.com/LeoMo-27/express-template.git"
   },
   "author": "José Manuel Madriaza Caravia <jm.madriaza@uc.cl>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
 }
