@@ -8,6 +8,8 @@ An Express template that uses:
 * [PostgreSQL](https://www.postgresql.org/)
 * [Yarn](https://yarnpkg.com/)
 
+This template is free to use and can be used for any purpose. Also, you can change it however you want. The folder distribution is just to show I would like it to be distributed.
+
 ## Setup
 
 ### Env Variables
@@ -67,3 +69,6 @@ I also included some extra packages that I use in my projects, if you remove the
 * [Eslint](https://eslint.org/) with airbnb configuration, to check code quality.
 * [Jsonwebtoken](https://github.com/auth0/node-jsonwebtoken) to generate auth tokens.
 
+## Extra
+
+This template also includes a User CRUD. If you wish to remove it, please **feel free to do it!** I just included it to show you how I would use this template. 
