@@ -13,6 +13,7 @@
     "url": "git+https://github.com/LeoMo-27/express-template.git"
   },
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
