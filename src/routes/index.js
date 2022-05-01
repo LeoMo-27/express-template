@@ -7,8 +7,6 @@ const router = express.Router();
 
 // Api v1 routes
 
-router.use('/users', users);
-
-app.use('/api/v1', router);
+app.use('/api/v1', users);
 
 module.exports = app;
