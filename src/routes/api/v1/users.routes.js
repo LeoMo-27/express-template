@@ -14,4 +14,6 @@ router.post('/', validateBody, users.create);
 
 router.patch('/:id', findById, users.update);
 
+router.delete('/:id', findById, users.deleteUser);
+
 module.exports = router;

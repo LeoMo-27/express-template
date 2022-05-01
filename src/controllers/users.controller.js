@@ -48,9 +48,22 @@ const update = async (req, res) => {
   }
 };
 
+const deleteUser = async (req, res) => {
+  const { user } = res.locals;
+  try {
+    await user.destroy();
+    res.status(204).send();
+  } catch (err) {
+    res.status(500).send({
+      message: 'Could not delete User with id=${user.id}',
+    });
+  }
+};
+
 module.exports = {
   create,
   findAll,
   findOne,
   update,
+  deleteUser,
 };
