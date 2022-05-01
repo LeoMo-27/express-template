@@ -4,6 +4,6 @@ const index = require('./controllers/index');
 
 const app = express();
 
-app.use('/index', index);
+app.use('/', index);
 
 module.exports = app;
