@@ -38,6 +38,6 @@
     "eslint-plugin-import": "^2.26.0",
     "nodemon": "^2.0.16"
   },
-  "author": "José Manuel Madriaza Caravia <jm.madriaza@uc.cl>",
+  "author": "José Manuel Madriaza Caravia <LeoMo-27>",
   "license": "MIT"
 }
