@@ -32,8 +32,22 @@ const create = async (req, res) => {
   }
 }
 
+const update = async (req, res) => {
+  const { user } = res.locals;
+  try {
+    await user.update(req.body);
+    res.status(200).send(user);
+  }
+  catch (err) {
+    res.status(500).send({
+      message: 'Some error occurred while updating the User.'
+    });
+  }
+}
+
 module.exports = {
   create,
   findAll,
-  findOne
+  findOne,
+  update,
 }
