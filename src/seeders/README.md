@@ -1,0 +1,1 @@
+# This folder is to contain all the seeders for the database
