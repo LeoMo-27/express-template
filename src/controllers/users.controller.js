@@ -55,7 +55,7 @@ const deleteUser = async (req, res) => {
     res.status(204).send();
   } catch (err) {
     res.status(500).send({
-      message: 'Could not delete User with id=${user.id}',
+      message: 'Could not delete User',
     });
   }
 };
