@@ -10,6 +10,8 @@ An Express template that uses:
 
 ## Setup
 
+### Env Variables
+
 First you will need to create a .env file in the root of your project. This file will contain the following information:
 
 ```text
@@ -21,6 +23,7 @@ DB_PORT: The port in which your database is running (by default 5432)
 JWT_SECRET: The secret key used to sign the JWT token
 ```
 
+### Running the project
 
 To run this project you can either use [docker-compose](https://docs.docker.com/compose/) or run it manually.
 
