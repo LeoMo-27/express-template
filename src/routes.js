@@ -1,6 +1,6 @@
 const express = require('express');
 
-const index = require('./controllers/index');
+const index = require('./routes/index');
 
 const app = express();
 
