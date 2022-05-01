@@ -1,6 +1,6 @@
-'use strict';
+/* eslint-disable no-unused-vars */
 const {
-  Model
+  Model,
 } = require('sequelize');
 const bcrypt = require('bcrypt');
 
@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
     }
+
     checkPassword(password) {
       return bcrypt.compare(password, this.password);
     }
@@ -27,10 +28,10 @@ module.exports = (sequelize, DataTypes) => {
       allowEmpty: false,
       validate: {
         notNull: {
-          msg: 'First name is required'
+          msg: 'First name is required',
         },
         notEmpty: {
-          msg: 'First name is required'
+          msg: 'First name is required',
         },
       },
     },
@@ -40,10 +41,10 @@ module.exports = (sequelize, DataTypes) => {
       allowEmpty: false,
       validate: {
         notNull: {
-          msg: 'Last name is required'
+          msg: 'Last name is required',
         },
         notEmpty: {
-          msg: 'Last name is required'
+          msg: 'Last name is required',
         },
       },
     },
@@ -53,12 +54,12 @@ module.exports = (sequelize, DataTypes) => {
       allowEmpty: false,
       validate: {
         notNull: {
-          msg: 'Email is required'
+          msg: 'Email is required',
         },
         notEmpty: {
-          msg: 'Email is required'
+          msg: 'Email is required',
         },
-        isEmail: true
+        isEmail: true,
       },
     },
     password: {
@@ -67,12 +68,12 @@ module.exports = (sequelize, DataTypes) => {
       allowEmpty: false,
       validate: {
         notNull: {
-          msg: 'Password is required'
+          msg: 'Password is required',
         },
         notEmpty: {
-          msg: 'Password is required'
+          msg: 'Password is required',
         },
-        len: [5, 150]
+        len: [5, 150],
       },
     },
   }, {

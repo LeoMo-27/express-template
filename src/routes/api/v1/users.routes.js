@@ -14,5 +14,4 @@ router.post('/', validateBody, users.create);
 
 router.patch('/:id', findById, users.update);
 
-
 module.exports = router;

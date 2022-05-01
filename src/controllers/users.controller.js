@@ -1,5 +1,6 @@
 const db = require('../models');
-const User = db.User;
+
+const { User } = db;
 
 const findAll = async (req, res) => {
   try {
@@ -20,34 +21,36 @@ const findOne = async (req, res) => {
 };
 
 const create = async (req, res) => {
-  const { firstName, lastName, email, password } = req.body;
+  const {
+    firstName, lastName, email, password,
+  } = req.body;
   try {
-    const user = await User.create({ firstName, lastName, email, password });
+    const user = await User.create({
+      firstName, lastName, email, password,
+    });
     res.status(201).send(user);
-  }
-  catch (err) {
+  } catch (err) {
     res.status(500).send({
-      message: err.message || 'Some error occurred while creating the User.'
+      message: err.message || 'Some error occurred while creating the User.',
     });
   }
-}
+};
 
 const update = async (req, res) => {
   const { user } = res.locals;
   try {
     await user.update(req.body);
     res.status(200).send(user);
-  }
-  catch (err) {
+  } catch (err) {
     res.status(500).send({
-      message: 'Some error occurred while updating the User.'
+      message: 'Some error occurred while updating the User.',
     });
   }
-}
+};
 
 module.exports = {
   create,
   findAll,
   findOne,
   update,
-}
+};
