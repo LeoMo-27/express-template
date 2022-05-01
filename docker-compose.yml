@@ -1,0 +1,40 @@
+# This docker-compose file in meant only for development usage (not production)
+version: "3.9"
+services:
+  backend:
+    image: node:16
+    command: bash -c "yarn install && yarn db:reset && yarn dev"
+    ports:
+      - ${PORT}:${PORT}
+    working_dir: /backend
+    volumes:
+      - ./:/backend
+    depends_on:
+      - db
+    environment:
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: ${DB_NAME}
+      DB_PORT: ${DB_PORT}
+      DB_HOST: db
+    networks:
+      - app-network
+
+  db:
+    image: postgres
+    volumes:
+      - backend-db:/var/lib/postgresql/data
+    ports:
+      - ${DB_PORT}:${DB_PORT}
+    environment:
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    networks:                 
+      - app-network
+
+volumes:
+  backend-db:
+networks:
+  app-network:
+    driver: bridge
