@@ -1,0 +1,1 @@
+The migrations you have created are stored in the migrations directory.
