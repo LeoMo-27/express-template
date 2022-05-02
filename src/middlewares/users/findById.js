@@ -12,9 +12,10 @@ async function findById(req, res, next) {
     return res.status(404).send({
       message: 'User not found',
     });
-  } catch (err) {
+  } catch (error) {
     return res.status(500).send({
       message: 'Some error occurred while retrieving users.',
+      error: error.message,
     });
   }
 }

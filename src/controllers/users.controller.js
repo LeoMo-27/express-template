@@ -7,7 +7,9 @@ const findAll = async (req, res) => {
     const users = await User.findAll();
     res.status(200).send(users);
   } catch (error) {
-    res.status(500).send('Error retrieving users');
+    res.status(500).send({
+      message: error.message || 'Could not retrieve Users',
+    });
   }
 };
 
@@ -16,7 +18,9 @@ const findOne = async (req, res) => {
   try {
     res.status(200).send(user);
   } catch (error) {
-    res.status(500).send(error);
+    res.status(500).send({
+      message: error.message || 'Could not retrieve User',
+    });
   }
 };
 
@@ -29,9 +33,9 @@ const create = async (req, res) => {
       firstName, lastName, email, password,
     });
     res.status(201).send(user);
-  } catch (err) {
+  } catch (error) {
     res.status(500).send({
-      message: err.message || 'Some error occurred while creating the User.',
+      message: error.message || 'Some error occurred while creating the User.',
     });
   }
 };
@@ -41,9 +45,9 @@ const update = async (req, res) => {
   try {
     await user.update(req.body);
     res.status(200).send(user);
-  } catch (err) {
+  } catch (error) {
     res.status(500).send({
-      message: 'Some error occurred while updating the User.',
+      message: error.message || 'Some error occurred while updating the User.',
     });
   }
 };
@@ -53,9 +57,9 @@ const deleteUser = async (req, res) => {
   try {
     await user.destroy();
     res.status(204).send();
-  } catch (err) {
+  } catch (error) {
     res.status(500).send({
-      message: 'Could not delete User',
+      message: error.message || 'Could not delete User',
     });
   }
 };
