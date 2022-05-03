@@ -8,6 +8,7 @@ const cookieParser = require('cookie-parser');
 
 const routes = require('./routes/index');
 const db = require('./models');
+const { errorHandler, notFoundHandler } = require('./middlewares/errors/errorHandler');
 
 const app = express();
 
@@ -20,10 +21,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(routes);
 
-app.use((req, res, next) => {
-  res.status(404).send('Not Found');
-  next();
-});
+app.use(errorHandler);
+app.use(notFoundHandler);
 
 db.sequelize
   .authenticate()
@@ -37,4 +36,4 @@ db.sequelize
       return app;
     });
   })
-  .catch((err) => console.error('Unable to connect to the database:', err));
+  .catch((error) => console.error('Unable to connect to the database:', error));
