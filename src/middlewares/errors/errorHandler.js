@@ -1,3 +1,4 @@
+/* eslint no-unused-vars: "off" */
 const httpError = require('http-errors');
 
 function errorHandler(error, req, res, next) {
@@ -14,4 +15,4 @@ function notFoundHandler(req, res, next) {
 module.exports = {
   errorHandler,
   notFoundHandler,
-}
+};

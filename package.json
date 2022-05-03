@@ -4,8 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./src/app.js",
-    "dev": "nodemon ./src/app.js",
+    "start": "node ./src/server.js",
+    "dev": "nodemon ./src/server.js",
     "db:create": "sequelize db:create",
     "db:drop": "sequelize db:drop",
     "db:reset": "sequelize db:drop && sequelize db:create && sequelize db:migrate && sequelize db:seed:all",
