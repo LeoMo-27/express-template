@@ -18,6 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(routes);
 
+// we setup error handlers here
 app.use(errorHandler);
 app.use(notFoundHandler);
 

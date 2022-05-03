@@ -4,6 +4,7 @@ const db = require('./models');
 
 const PORT = process.env.PORT || 3000;
 
+// checks if the database is connected
 async function checkDatabaseConnection() {
   try {
     await db.sequelize.authenticate();
