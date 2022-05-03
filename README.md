@@ -64,7 +64,7 @@ yarn start
 
 ## Extra packages
 I also included some extra packages that I use in my projects, if you want to remove them feel free to do it!
-* [Bcrypt](https://github.com/kelektiv/node.bcrypt.js) to hash user passwords.
+* [Bcrypt](https://github.com/kelektiv/node.bcrypt.js) used for hashing.
 * [Dotenv](https://github.com/motdotla/dotenv) to read .env files.
 * [Eslint](https://eslint.org/) with airbnb configuration, to check code quality.
 * [Jsonwebtoken](https://github.com/auth0/node-jsonwebtoken) to generate auth tokens.
