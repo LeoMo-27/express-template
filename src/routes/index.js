@@ -6,6 +6,6 @@ const app = express();
 
 // Api v1 routes
 
-app.use('/api/v1', users);
+app.use('/api/v1/users', users);
 
 module.exports = app;

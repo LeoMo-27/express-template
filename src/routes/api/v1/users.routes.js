@@ -7,8 +7,6 @@ const findById = require('../../../middlewares/users/findById');
 
 const router = express.Router();
 
-router.use('/users', router);
-
 router.get('/', users.findAll);
 router.get('/:id', findById, users.findOne);
 
